@@ -5,32 +5,34 @@ import CheckBoxText from '../../../components/molecules/checkboxtext'
 
 const styles = {
     link: {
-        display: "inline",
+        display: "inline-block",
     },
     checkBox: {
-        display: "inline",
+        display: "inline-block",
     }
 }
 
 const CheckBoxTextLinkText = (props) => (
-    <Row type="flex" justify="space-around">
-        <Col span={10}>
-            <CheckBoxText 
-                style={styles.checkBox}
-                onChange={props.onChange} 
-                checkBoxName={props.checkBoxName} 
-                text={props.checkBoxText}
-                />
-        </Col>
-        <Col span={10}>
-            <a 
-                href={props.linkTextHref} 
-                style={styles.link}
-            >
-                <Typography.Text>{props.linkText}</Typography.Text>
-            </a>
-        </Col>
-    </Row>
+    <div style={props.style}>
+        <Row type="flex" justify="space-around">
+            <Col>
+                <CheckBoxText 
+                    style={styles.checkBox}
+                    onChange={props.onChange} 
+                    checkBoxName={props.checkBoxName} 
+                    text={props.checkBoxText}
+                    />
+            </Col>
+            <Col>
+                <a 
+                    href={props.linkTextHref} 
+                    style={styles.link}
+                >
+                    <Typography.Text>{props.linkText}</Typography.Text>
+                </a>
+            </Col>
+        </Row>
+    </div>
 )
 // const CheckBoxTextLinkText = (props: Props): React.Element<*> => (
 //     <div className={props.className}>
@@ -65,14 +67,16 @@ CheckBoxTextLinkText.propTypes = {
     linkText: Proptypes.string,
     checkBoxName: Proptypes.string,
     linkTextHref: Proptypes.string,
+    style: Proptypes.object,
 }
 CheckBoxTextLinkText.defaultProps = {
-    className: '',
     onChange: (e) => console.log(e.target.name, e.target.value),
     checkBoxText: '',
     linkText: '',
     checkBoxName: '',
     linkTextHref: '#',
+    style: {},
+
 }
 
 export default CheckBoxTextLinkText

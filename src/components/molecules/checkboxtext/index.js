@@ -11,7 +11,7 @@ import { Typography, Checkbox } from 'antd'
 
 
 const CheckBoxText = (props) => (
-    <div>
+    <div style={props.style}>
         <Checkbox onChange={props.onChange} name={props.checkBoxName}/>
         <Typography.Text>{props.text}</Typography.Text>
     </div>
@@ -20,13 +20,15 @@ const CheckBoxText = (props) => (
 CheckBoxText.propTypes = {
     onChange: Proptypes.func,
     text: Proptypes.string,
-    checkBoxName: Proptypes.string
+    checkBoxName: Proptypes.string,
+    style: Proptypes.object,
 }
 
 CheckBoxText.defaultProps = {
     onChange: (e) => console.log(e.target.name, e.target.value),
     text: '',
-    checkBoxName: ''
+    checkBoxName: '',
+    style: {}
 }
 
 export default CheckBoxText

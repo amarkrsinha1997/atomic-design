@@ -11,14 +11,27 @@ const styles = {
 }
 
 const DoubleButton = (props) => (
-    <Row type="flex" justify="space-around">
+    <Row 
+        style={props.style} 
+        type="flex" 
+        justify="space-around"
+        >
         <Col span={11}>
-            <Button style={styles.inverted} onChange={props.leftOnChange} size="large" block>
+            <Button 
+                style={styles.inverted} 
+                onClick={props.leftOnClick} 
+                size="large" 
+                block
+                >
                 {props.leftButtonName}
             </Button>
         </Col>
         <Col span={11}>
-            <Button onChange={props.rightOnChange} size="large" block>
+            <Button 
+                onClick={props.rightOnClick} 
+                size="large" 
+                block
+                >
                 {props.rightButtonName}
             </Button>
         </Col>
@@ -26,15 +39,17 @@ const DoubleButton = (props) => (
 )
 
 DoubleButton.propTypes = {
-    leftOnChange: Proptypes.func,
-    rightOnChange: Proptypes.func,
+    leftOnClick: Proptypes.func,
+    rightOnClick: Proptypes.func,
     leftButtonName: Proptypes.string.isRequired,
     rightButtonName: Proptypes.string.isRequired,
+    style: Proptypes.object,
 }
 
 DoubleButton.defaultProps = {
-    leftOnChange: (e) => console.log(e.target.name, e.target.value),
-    rightOnChange: (e) => console.log(e.target.name, e.target.value),
+    leftOnClick: (e) => console.log(e.target.name, e.target.value),
+    rightOnClick: (e) => console.log(e.target.name, e.target.value),
+    style: {},
 }
 
 export default DoubleButton

@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import Logo from "./components/atoms/logo";
-
+import HalfBackgroundImage from "./components/organism/left-half-background-cover";
+import LoginForm from "./components/organism/login-form"
 class App extends Component {
   render() {
     return (
-      <div>
-        <Logo type="normal"/>
-      </div>
-
+        <HalfBackgroundImage footer="Term of use. Privacy policy">
+          <LoginForm />
+        </HalfBackgroundImage>
     );
   }
 }
