@@ -5,6 +5,7 @@
   "dependencies": {
     "@storybook/addon-info": "^5.0.1",
     "antd": "3.14.1",
+    "babel-loader": "^8.0.5",
     "express": "^4.16.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
